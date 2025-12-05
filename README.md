@@ -2,6 +2,8 @@
 
 # Shifty Sam's Stock Tracker
 
+![Demo](images/demo.gif)
+
 A JavaScript-based AI application for predicting stock prices.
 
 ## Overview
