@@ -94,6 +94,16 @@ This project uses artificial intelligence and machine learning techniques to ana
 
 #### 3. Create the config file
    
+   You have two options:
+
+   **Option A: Copy the example file (Recommended)**
+   ```bash
+   cp config.example.js config.js
+   ```
+   Then open `config.js` and replace the placeholder values with your actual API keys.
+
+   **Option B: Create manually**
+   
    Create a new file called `config.js` in the root directory with the following content:
 
    ```javascript
@@ -107,19 +117,6 @@ This project uses artificial intelligence and machine learning techniques to ana
    ```
 
    Replace the placeholder values with your actual API keys.
-
-   **Reference:** The `config.example.js` file shows the expected structure:
-
-   ```javascript
-   // config.example.js
-   // API Configuration - DO NOT COMMIT THIS FILE
-   // Copy this file to config.js and add your real API keys
-   
-   export const config = {
-       POLYGON_API_KEY: 'your_polygon_api_key_here',
-       OPENAI_API_KEY: 'your_openai_api_key_here'
-   };
-   ```
 
 > ⚠️ **Important:** Never commit `config.js` to version control. It's already in `.gitignore` to protect your API keys.
 

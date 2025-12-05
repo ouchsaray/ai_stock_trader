@@ -229,6 +229,13 @@ body {
     transition: color 0.3s ease;
 }
 
+.input-hint {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: #6b7a8f;
+    text-align: center;
+}
+
 #ticker-input-form label.error {
     color: #ff6b6b;
 }

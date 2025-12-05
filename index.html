@@ -10,7 +10,9 @@
     <div class="container">
         <!-- Header with Logo -->
         <header class="header">
-            <img src="images/logo.png" alt="Shifty Sam's Stock Tracker" class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Shifty Sam's Stock Tracker" class="logo">
+            </a>
         </header>
 
         <!-- Main Content -->
@@ -21,23 +23,24 @@
                 
                 <p class="description">
                     Enter stock ticker symbols below to track and generate AI-powered prediction reports.
-                    Add multiple stocks using the + button.
+                    Add up to <strong>3 stocks</strong> using the + button.
                 </p>
 
                 <!-- Stock Input Section -->
                 <div class="stock-input-section">
                     <form id="ticker-input-form">
-                        <label for="ticker-input" id="ticker-label">Enter a stock ticker:</label>
+                        <label for="ticker-input" id="ticker-label">Enter a stock ticker (max 3):</label>
                         <div class="input-wrapper">
                             <input 
                                 type="text" 
                                 id="ticker-input" 
                                 class="stock-input" 
-                                placeholder="Enter ticker (e.g., TSLA)"
-                                maxlength="10"
+                                placeholder="e.g., TSLA, PLTR, ASTS"
+                                maxlength="25"
                             >
                             <button type="submit" class="add-btn" id="addBtn" title="Add stock">+</button>
                         </div>
+                        <p class="input-hint">💡 Enter tickers separated by commas or add one at a time</p>
                     </form>
                 </div>
 
