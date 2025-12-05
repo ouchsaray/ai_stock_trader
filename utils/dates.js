@@ -1,23 +1,19 @@
 // Utility for generating date ranges for stock API calls
 
-function getDateRange() {
-    const endDate = new Date();
-    const startDate = new Date();
-    
-    // Get data for the last 30 days
-    startDate.setDate(endDate.getDate() - 30);
-    
-    return {
-        startDate: formatDate(startDate),
-        endDate: formatDate(endDate)
-    };
-}
-
 function formatDate(date) {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
+    const yyyy = date.getFullYear();
+    const mm = String(date.getMonth() + 1).padStart(2, '0');
+    const dd = String(date.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
 }
 
-export const dates = getDateRange();
+function getDateNDaysAgo(n) {
+    const now = new Date(); // current date and time
+    now.setDate(now.getDate() - n); // subtract n days
+    return formatDate(now);
+}
+
+export const dates = {
+    startDate: getDateNDaysAgo(3), // alter days to increase/decrease data set
+    endDate: getDateNDaysAgo(1) // leave at 1 to get yesterday's data
+}
