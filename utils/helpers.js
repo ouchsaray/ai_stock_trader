@@ -88,29 +88,6 @@ export function removeDuplicateTickers(tickers, existingTickers = []) {
 }
 
 /**
- * Format date as YYYY-MM-DD
- * @param {Date} date - The date to format
- * @returns {string} - Formatted date string
- */
-export function formatDate(date) {
-    const yyyy = date.getFullYear();
-    const mm = String(date.getMonth() + 1).padStart(2, '0');
-    const dd = String(date.getDate()).padStart(2, '0');
-    return `${yyyy}-${mm}-${dd}`;
-}
-
-/**
- * Get date N days ago
- * @param {number} n - Number of days ago
- * @returns {string} - Formatted date string
- */
-export function getDateNDaysAgo(n) {
-    const now = new Date();
-    now.setDate(now.getDate() - n);
-    return formatDate(now);
-}
-
-/**
  * Validate stock data response from Polygon.io
  * @param {object} data - The API response data
  * @returns {{ isValid: boolean, error: string | null }}

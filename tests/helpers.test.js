@@ -5,8 +5,6 @@ import {
     filterValidTickers,
     checkTickerLimit,
     removeDuplicateTickers,
-    formatDate,
-    getDateNDaysAgo,
     validateStockData
 } from '../utils/helpers.js';
 
@@ -127,39 +125,6 @@ describe('removeDuplicateTickers', () => {
     test('should handle empty arrays', () => {
         expect(removeDuplicateTickers([])).toEqual([]);
         expect(removeDuplicateTickers(['TSLA'], [])).toEqual(['TSLA']);
-    });
-});
-
-describe('formatDate', () => {
-    test('should format date as YYYY-MM-DD', () => {
-        expect(formatDate(new Date('2025-12-05'))).toBe('2025-12-05');
-        expect(formatDate(new Date('2025-01-15'))).toBe('2025-01-15');
-    });
-
-    test('should pad single digit months and days', () => {
-        expect(formatDate(new Date('2025-01-05'))).toBe('2025-01-05');
-        expect(formatDate(new Date('2025-09-09'))).toBe('2025-09-09');
-    });
-});
-
-describe('getDateNDaysAgo', () => {
-    test('should return date in correct format', () => {
-        const result = getDateNDaysAgo(1);
-        expect(result).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-    });
-
-    test('should return yesterday for n=1', () => {
-        const yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-        const expected = formatDate(yesterday);
-        expect(getDateNDaysAgo(1)).toBe(expected);
-    });
-
-    test('should return 3 days ago for n=3', () => {
-        const threeDaysAgo = new Date();
-        threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
-        const expected = formatDate(threeDaysAgo);
-        expect(getDateNDaysAgo(3)).toBe(expected);
     });
 });
 
